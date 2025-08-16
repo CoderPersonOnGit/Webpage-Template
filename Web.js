@@ -37,6 +37,9 @@ tabLabels.forEach(label => {
   button.style.color = '#000';
 
   tabContainer.appendChild(button);
+  button.addEventListener('click', () => {
+  alert(`You clicked ${label}`);
+});
 });
 
 // Box
@@ -96,6 +99,16 @@ image.style.margin = '20px auto';
 image.style.maxWidth = '100%';
 document.body.appendChild(image);
 
+//Contact Info
+const contactSection = document.createElement('section');
+contactSection.style.maxWidth = '600px';
+contactSection.style.margin = '40px auto';
+contactSection.style.padding = '20px';
+contactSection.style.borderRadius = '8px';
+contactSection.style.backgroundColor = '#f0f0f0';
+contactSection.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+document.body.appendChild(contactSection);
+
 // Footer
 const footer = document.createElement('footer');
 footer.textContent = '© 2025 Sample Webpage';
@@ -107,3 +120,4 @@ footer.style.position = 'relative';
 footer.style.bottom = '0';
 footer.style.width = '100%';
 document.body.appendChild(footer);
+
