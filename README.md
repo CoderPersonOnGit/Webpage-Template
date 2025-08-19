@@ -1,6 +1,6 @@
 # 🖥️ Editable Webpage Template
 
-A clean, responsive webpage built entirely with JavaScript. This template includes styling, editable content areas, and a layout using the Roboto font.
+A clean, responsive webpage built entirely with JavaScript and operated with a HTML - based operator. This template includes styling, editable content areas, and a layout using the Roboto font.
 
 ## 🚀 Features
 
