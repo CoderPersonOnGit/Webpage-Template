@@ -1,28 +1,42 @@
+//Webpage general settings
 document.body.style.margin = '0';
 document.body.style.fontFamily = 'Open Sans, sans-serif'; 
 document.body.style.backgroundColor = '#fafafa'; 
 document.body.style.padding = '2em';
+
+//containers
+const container = document.createElement('div');
+container.style.maxWidth = '800px';
+container.style.margin = '0 auto';
+container.style.padding = '20px';
+document.body.appendChild(container);
+
+//fetching fonts
+const link = document.createElement('link');
+link.rel = 'stylesheet';
+link.href = 'https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap';
+document.head.appendChild(link);
 
 // Title
 const title = document.createElement("h1");
 title.textContent = 'Webpage';
 title.style.textAlign = 'center'; 
 title.style.fontSize = '40px';
-document.body.appendChild(title);
+container.appendChild(title);
 
 // Subtitle
 const subtitle = document.createElement("p");
 subtitle.textContent = 'Editable Template';
 subtitle.style.textAlign = 'center'; 
 subtitle.style.color = '#666';
-document.body.appendChild(subtitle);
+container.appendChild(subtitle);
 
 //tabs
 const tabContainer = document.createElement('div');
 tabContainer.style.display = 'flex';
 tabContainer.style.justifyContent = 'center';
 tabContainer.style.gap = '10px';
-document.body.appendChild(tabContainer);
+container.appendChild(tabContainer);
 
 const tabLabels = ['page1', 'page2', 'page3'];
 
@@ -51,7 +65,7 @@ box.style.width = '300px';
 box.style.height = '150px';
 box.style.backgroundColor = '#ddd'; 
 box.style.margin = '20px auto'; 
-document.body.appendChild(box);
+container.appendChild(box);
 
 // About Me Section
 const aboutsection = document.createElement('section');
@@ -60,7 +74,7 @@ aboutsection.style.margin = '40px auto';
 aboutsection.style.padding = '20px';
 aboutsection.style.borderRadius = '8px';
 aboutsection.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-document.body.appendChild(aboutsection);
+container.appendChild(aboutsection);
 
 // About Me Heading
 const aboutHeading = document.createElement('h2');
@@ -88,7 +102,7 @@ content.innerHTML = `
 <h2 style="text-align:center;">Welcome to My Page</h2>
 <p>Insert Content Here.</p>
 <p>Insert Secondary Content Here.</p>`;
-document.body.appendChild(content);
+container.appendChild(content);
 
 // Image
 const image = document.createElement('img');
@@ -97,7 +111,7 @@ image.alt = 'Sample Image';
 image.style.display = 'block';
 image.style.margin = '20px auto';
 image.style.maxWidth = '100%';
-document.body.appendChild(image);
+container.appendChild(image);
 
 //Contact Info
 const contactSection = document.createElement('section');
@@ -107,7 +121,12 @@ contactSection.style.padding = '20px';
 contactSection.style.borderRadius = '8px';
 contactSection.style.backgroundColor = '#f0f0f0';
 contactSection.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
-document.body.appendChild(contactSection);
+container.appendChild(contactSection);
+
+const contactInfo = document.createElement('p');
+contactInfo.textContent = "Email: you@example.com";
+contactInfo.style.textAlign = 'center';
+contactSection.appendChild(contactInfo);
 
 // Footer
 const footer = document.createElement('footer');
@@ -116,8 +135,17 @@ footer.style.textAlign = 'center';
 footer.style.padding = '20px';
 footer.style.backgroundColor = '#333';
 footer.style.color = '#fff';
-footer.style.position = 'relative';
+footer.style.position = 'fixed';
 footer.style.bottom = '0';
 footer.style.width = '100%';
-document.body.appendChild(footer);
+container.appendChild(footer);
+
+//loading fonts
+document.fonts.ready.then(() => {
+  document.body.style.fontFamily = 'Roboto, sans-serif';
+  title.style.fontFamily = 'Roboto, sans-serif';
+  subtitle.style.fontFamily = 'Roboto, sans-serif';
+  aboutHeading.style.fontFamily = 'Roboto, sans-serif';
+  contactInfo.style.fontFamily = 'Roboto, sans-serif';
+});
 
